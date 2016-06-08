@@ -25,7 +25,7 @@ COPY pom.xml /exhibitor/pom.xml
   
 RUN cd /exhibitor &&\
   mvn clean package &&\
-  mv /exhibitor/target/exhibitor-1.5.6-shaded.jar . &&\
+  mv /exhibitor/target/exhibitor-1.5.6.jar . &&\
   rm -rf /exhibitor/target &&\
   rm /exhibitor/pom.xml
   
@@ -48,5 +48,5 @@ ENTRYPOINT [ "/entrypoint.sh" ]
 
 # CMD ["java", "-jar", "exhibitor-1.0-jar-with-dependencies.jar", "-c", "file"]
 
-CMD ["java", "-jar", "exhibitor-1.5.6-shaded.jar", "-c", "file"]
+CMD ["java", "-jar", "exhibitor-1.5.6.jar", "-c", "file"]
 
